@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1599923924 source:c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\laboratorio_tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"calculos.h"
+
+1599923381 source:c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\laboratorio_tp1\calculos.c
+	<stdio.h>
+	<stdlib.h>
+
+1599735202 source:c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\laboratorio_tp1\resultados.c
+	<stdio.h>
+	<stdlib.h>
+	"calculos.h"
+
+1599922987 c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\laboratorio_tp1\calculos.h
+
+1599732211 c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\laboratorio_tp1\resultados.h
+
