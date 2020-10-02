@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1601630957 source:c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\lab_tp2\funcionesauxiliares.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+
+1601632176 c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\lab_tp2\arrayemployees.h
+
+1601631531 source:c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\lab_tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"funcionesAuxiliares.h"
+
+1601630072 c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\lab_tp2\funcionesauxiliares.h
+
+1601632286 source:c:\users\aleja\utn\primer cuatrimestre\programacion_laboratorio 1\lab_tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"ArrayEmployees.h"
+	"funcionesAuxiliares.h"
+
