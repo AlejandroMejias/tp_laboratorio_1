@@ -206,3 +206,58 @@
 
 1604678240 c:\users\aleja\onedrive\escritorio\tp_3\parser.h
 
+1604797869 source:c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\axuliares.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auxiliares.h"
+
+1604797582 c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\auxiliares.h
+
+1604712722 source:c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Employee.h"
+	"auxiliares.h"
+	"Controller.h"
+	"parser.h"
+
+1604696881 c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\linkedlist.h
+
+1604711840 c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\employee.h
+	"LinkedList.h"
+
+1604678236 c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\controller.h
+
+1604678240 c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\parser.h
+
+1604712338 source:c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"LinkedList.h"
+	"Controller.h"
+
+1604798175 source:c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"auxiliares.h"
+
+1604712770 source:c:\users\aleja\onedrive\escritorio\tp_laboratorio_1\tp_3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+

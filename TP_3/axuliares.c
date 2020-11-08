@@ -44,6 +44,168 @@ char validarCaracter(char caracter)
     }
     return caracter;
 }
+/** \brief Se encarga de capturar y validar un nombre valido
+ *
+ * \param Cadena vacia
+ * \return cadena validada
+ * 1 Si esta todo ok
+ * 0 si hubo error
+ *
+ */
+
+int capturarNombre(char* cadena)
+{
+    int retorno = 0;
+    int tam;
+    int i;
+    int aux;
+    char auxCadena[100];
+
+    do
+    {
+        printf("Ingrese el nombre: ");
+        fflush(stdin);
+        gets(auxCadena);
+
+        tam = strlen(auxCadena);
+
+        for(i = 0; auxCadena[i] != '\0' && tam > 0 && tam < 20; i++)
+        {
+            aux = auxCadena[i];
+            if((aux >= 97 && aux <= 122) || (aux >= 65 && aux <= 90))
+            {
+                retorno = 1;
+            }
+            else
+            {
+                retorno = 0;
+                break;
+            }
+        }
+
+        if(retorno == 1)
+        {
+            strcpy(cadena,auxCadena);
+        }
+        else
+        {
+            printf("\nERROR!! Campo demasiado largo o con valores numericoos.Vuela a ingresar...\n\n");
+            system("pause");
+            system("cls");
+        }
+    }
+    while(retorno == 0);
+
+    return retorno;
+}
+/** \brief Se encarga de capturar y validar las hors trabajadas
+ *
+ * \param Cadena vacia
+ * \return cadena validada
+ * 1 Si esta todo ok
+ * 0 si hubo error
+ *
+ */
+
+int capturarHorasTrabajadas(char* cadena)
+{
+    int retorno = 0;
+    int tam;
+    int i;
+    int aux;
+    char auxCadena[100];
+
+
+
+    do
+    {
+        printf("Ingrese las horas trabajadas: ");
+        fflush(stdin);
+        gets(auxCadena);
+        tam = strlen(auxCadena);
+        for(i = 0; auxCadena[i] != '\0' && tam > 0 && tam < 20; i++)
+        {
+            aux = auxCadena[i];
+            if(aux >= 48 && aux <= 57)
+            {
+                retorno = 1;
+            }
+            else
+            {
+                retorno = 0;
+                break;
+            }
+        }
+
+        if(retorno == 1)
+        {
+            strcpy(cadena,auxCadena);
+        }
+        else
+        {
+            printf("\nERROR! Este campo no puede contener letras, ni tampoco ser negativo.Vuelva a ingresar...\n\n");
+            system("pause");
+            system("cls");
+        }
+
+    }while(retorno == 0);
+
+    return retorno;
+}
+/** \brief Se encarga de capturar y validar el sueldo
+ *
+ * \param Cadena vacia
+ * \return cadena validada
+ * 1 Si esta todo ok
+ * 0 si hubo error
+ *
+ *
+ */
+
+int capturarSueldo(char* cadena)
+{
+    int retorno = 0;
+    int tam;
+    int i;
+    int aux;
+    char auxCadena[100];
+
+
+
+    do
+    {
+        printf("Ingrese el sueldo: ");
+        fflush(stdin);
+        gets(auxCadena);
+        tam = strlen(auxCadena);
+        for(i = 0; auxCadena[i] != '\0' && tam > 0 && tam < 20; i++)
+        {
+            aux = auxCadena[i];
+            if(aux >= 48 && aux <= 57)
+            {
+                retorno = 1;
+            }
+            else
+            {
+                retorno = 0;
+                break;
+            }
+        }
+
+        if(retorno == 1)
+        {
+            strcpy(cadena,auxCadena);
+        }
+        else
+        {
+            printf("\nERROR! Este campo no puede contener letras, ni tampoco ser negativo.Vuelva a ingresar...\n\n");
+            system("pause");
+            system("cls");
+        }
+
+    }while(retorno == 0);
+    return retorno;
+}
 /** \brief Se encarga de mostrar el menu de opciones para hacer modificaciones
  *
  * \return Opcion elegida por el usuario

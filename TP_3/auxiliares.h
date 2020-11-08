@@ -4,6 +4,9 @@
 
 char menu();
 char validarCaracter(char caracter);
+int capturarNombre(char* cadena);
+int capturarHorasTrabajadas(char* cadena);
+int capturarSueldo(char* cadena);
 char menuModificacion();
 char menuOrdenamiento();
 

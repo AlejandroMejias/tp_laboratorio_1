@@ -45,7 +45,6 @@ int main()
                 controller_removeEmployee(listaEmpleados);
                 break;
             case 'f':
-                system("cls");
                 controller_ListEmployee(listaEmpleados);
                 break;
             case 'g':
