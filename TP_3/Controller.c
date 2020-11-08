@@ -196,7 +196,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     {
         printf("\n\n\nIngrese id de empleado a modificar: ");
         respuesta = scanf("%d", &auxId);
-        while(respuesta == 0 || auxId > tam || auxId < 0)
+        while(respuesta == 0 || auxId < 0)
         {
             system("cls");
             printf("\n\nNo hay empleados con ese numero de id, reingrese: ");
@@ -209,47 +209,52 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             auxEmpleado = ll_get(pArrayListEmployee, i);
             if(auxId == auxEmpleado->id)
             {
+                retorno = 1;
                 break;
             }
         }
 
-        option = menuModificacion();
-
-        switch(option)
+        if(retorno == 1)
         {
-        case 'a':
-            system("cls");
-            if(capturarNombre(auxNombre))
-            {
-                employee_setNombre(auxEmpleado, auxNombre);
-                retorno = 1;
-            }
-            break;
-        case 'b':
-            system("cls");
-            if(capturarHorasTrabajadas(horasTrabajadasStr))
-            {
-                auxHoras = atoi(horasTrabajadasStr);
-                employee_setHorasTrabajadas(auxEmpleado, auxHoras);
-                retorno = 1;
-            }
-            break;
-        case 'c':
-            system("cls");
-            if(capturarSueldo(sueldoStr))
-            {
-                auxSueldo = atoi(sueldoStr);
-                employee_setSueldo(auxEmpleado, auxSueldo);
-                retorno = 1;
-            }
-            break;
+            option = menuModificacion();
 
-        case 'x':
-            retorno = -1;
-            break;
+            switch(option)
+            {
+            case 'a':
+                system("cls");
+                if(capturarNombre(auxNombre))
+                {
+                    employee_setNombre(auxEmpleado, auxNombre);
+                    retorno = 1;
+                }
+                break;
+            case 'b':
+                system("cls");
+                if(capturarHorasTrabajadas(horasTrabajadasStr))
+                {
+                    auxHoras = atoi(horasTrabajadasStr);
+                    employee_setHorasTrabajadas(auxEmpleado, auxHoras);
+                    retorno = 1;
+                }
+                break;
+            case 'c':
+                system("cls");
+                if(capturarSueldo(sueldoStr))
+                {
+                    auxSueldo = atoi(sueldoStr);
+                    employee_setSueldo(auxEmpleado, auxSueldo);
+                    retorno = 1;
+                }
+                break;
 
-        default:
-            printf("Opcion invalida.\n");
+            case 'x':
+                retorno = -1;
+                break;
+
+            default:
+                printf("Opcion invalida.\n");
+                retorno = 0;
+            }
         }
     }
 
@@ -261,7 +266,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     else if(retorno == 0)
     {
         system("cls");
-        printf("\n\nNo se pudo modificar el empleado. Debe cargar un archivo si aun no lo hizo...\n");
+        printf("\n\nNo se pudo modificar el empleado. Debe cargar un archivo si aun no lo hizo...\n\n");
         system("pause");
     }
     else
@@ -299,7 +304,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         controller_ListEmployee(pArrayListEmployee);
         printf("\n\nIngrese id de empleado a eliminar: ");
         respuesta = scanf("%d", &auxId);
-        while(respuesta == 0 || auxId > tam || auxId < 0)
+        while(respuesta == 0 || auxId < 0)
         {
             system("cls");
             printf("\n\nNo hay empleados con ese numero de id, reingrese: ");
@@ -311,37 +316,48 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
             auxEmpleado = ll_get(pArrayListEmployee, i);
             if(auxId == auxEmpleado->id)
             {
+                retorno = 1;
                 break;
             }
         }
 
-        system("cls");
-        printf("\nSe eliminara al siguiente empleado:\n\n");
-        printEmployee(auxEmpleado);
-        printf("\n\n");
-        printf("\n\nDesea continuar? Ingrese S(SI) / N(NO): ");
-        fflush(stdin);
-        option = tolower(getchar());
-        while(option != 's' && option != 'n')
+        if(retorno == 1)
         {
             system("cls");
-            printf("\nERROR!Ingrese S(SI) para eliminar el empleado, N(NO) para cancelar: ");
+            printf("\nSe eliminara al siguiente empleado:\n\n");
+            printEmployee(auxEmpleado);
+            printf("\n\n");
+            printf("\n\nDesea continuar? Ingrese S(SI) / N(NO): ");
             fflush(stdin);
             option = tolower(getchar());
+            while(option != 's' && option != 'n')
+            {
+                system("cls");
+                printf("\nERROR!Ingrese S(SI) para eliminar el empleado, N(NO) para cancelar: ");
+                fflush(stdin);
+                option = tolower(getchar());
+            }
+            if(option == 's')
+            {
+                ll_remove(pArrayListEmployee, i);
+                retorno = 1;
+                printf("\nEl empleado se elimino correctamente. \n\n");
+                system("pause");
+            }
+            if(option == 'n')
+            {
+                retorno = -1;
+                printf("\n\nSe ha cancelado la eliminacion...\n\n");
+                system("pause");
+            }
         }
-        if(option == 's')
+        else
         {
-            ll_remove(pArrayListEmployee, i);
-            retorno = 1;
-            printf("\nEl empleado se elimino correctamente. \n\n");
+            system("cls");
+            printf("\n\nNo hay empleados con ese numero de id, por favor vuelva a intentarlo\n\n");
             system("pause");
         }
-        if(option == 'n')
-        {
-            retorno = -1;
-            printf("\n\nSe ha cancelado la eliminacion...\n\n");
-            system("pause");
-        }
+
     }
 
     if(ll_isEmpty(pArrayListEmployee))
